@@ -6,7 +6,7 @@
 /*   By: rtakeshi <rtakeshi@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:41:46 by rtakeshi          #+#    #+#             */
-/*   Updated: 2022/03/16 18:42:25 by rtakeshi         ###   ########.fr       */
+/*   Updated: 2022/03/16 20:13:37 by rtakeshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ typedef struct	s_sentinel
 {
 	int		total; //OK
 	int		size_a; //OK
-	t_node	*head_a;
-	t_node	*tail_a;
-	t_node	*small_a;
-	t_node	*big_a;
+	t_node	*head_a; //OK
+	t_node	*tail_a; //OK
+	t_node	*small_a; //OK
+	t_node	*big_a; //OK
 	int		size_b; //OK
 	t_node	*head_b;
 	t_node	*tail_b;
@@ -50,7 +50,7 @@ typedef struct	s_sentinel
 int	check_number(const char *str);
 int	check_argc(int argc);
 int	check_argv(char	*argv);
-void	init_data(t_sentinel **data, int argc);
+void	init_data(t_sentinel *data, int argc);
 
 
 #endif
