@@ -6,7 +6,7 @@
 /*   By: rtakeshi <rtakeshi@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:12:19 by rtakeshi          #+#    #+#             */
-/*   Updated: 2022/03/19 20:26:01 by rtakeshi         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:25:43 by rtakeshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,21 @@ int	check_argc(int argc)
 	return (0);
 }
 
-int	check_argv(char	*argv)
+int	check_argv(char *argv)
 {
-	if (*argv == '+' || *argv == '-')
+	if (argv && (ft_isdigit(*argv) || *argv == '+' || *argv == '-'))
 	{
-		if (ft_isdigit(*(argv + 1)))
-			return (1);
-		else
-			return (0);
+		argv++;
+		while (*argv)
+		{
+			if (!ft_isdigit(*argv))
+				return (0);
+			argv++;
+		}
 	}
-	else if (ft_isdigit(*argv))
-		return (1);
-	return (0);
+	else
+		return (0);
+	return (1);
 }
 
 int	is_sorted(t_sentinel *data)

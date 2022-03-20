@@ -6,7 +6,7 @@
 /*   By: rtakeshi <rtakeshi@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:44:10 by rtakeshi          #+#    #+#             */
-/*   Updated: 2022/03/19 21:14:56 by rtakeshi         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:28:15 by rtakeshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	print_and_get(char *cmd, t_sentinel *data)
 		data->tail_b = NULL;
 	}
 }
-
-
 
 void	free_nodes(t_sentinel *data)
 {
