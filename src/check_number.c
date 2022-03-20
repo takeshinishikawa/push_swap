@@ -6,7 +6,7 @@
 /*   By: rtakeshi <rtakeshi@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:10:01 by rtakeshi          #+#    #+#             */
-/*   Updated: 2022/03/16 11:19:20 by rtakeshi         ###   ########.fr       */
+/*   Updated: 2022/03/17 20:20:53 by rtakeshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ int	check_number(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		if (num * signal >= LONG_MAX / 10 && (*str - '0') > LONG_MAX % 10)
-			return (0);
-		else if (num * signal <= LONG_MIN / 10
-			&& (*str - '0') > -(LONG_MIN % 10))
+		if ((num * signal >= LONG_MAX / 10 && (*str - '0') > LONG_MAX % 10) || \
+		(num * signal <= LONG_MIN / 10 && (*str - '0') > -(LONG_MIN % 10)))
 			return (0);
 		num = (num * 10) + (*str - '0');
 		str++;
 	}
+	if (num <= INT_MIN || num >= INT_MAX)
+		return (0);
 	return (1);
 }
